@@ -2,12 +2,12 @@
 
 colourList = ["blu", "giallo", "nero"]
 brandList = ["audi", "nissan", "panda"]
-listaalim = ["diesel", "elettrico"]
-listalett = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ]
-listanum = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+fuelList = ["diesel", "elettrico"]
+letterList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ]
+numList = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 import random
 
-class Veicolo:
+class Vehicle:
     def __init__(self, brand, model, colour, enginesize:int, fuelType, plates):
         if brand not in brandList:
             raise ValueError("IMPOSSIBLE")
@@ -21,12 +21,12 @@ class Veicolo:
             raise ValueError("value not supported")
         else:
             self.enginesize = enginesize
-        if fuelType not in listaalim:
+        if fuelType not in fuelList:
             raise ValueError("IMPOSSIBLE")
         else:
             self.fuelType = fuelType
         for x in plates:
-            if x[0] in listalett and x[1] in listalett and x[2] in listanum and x[3] in listanum and x[4] in listanum and x[5] in listalett and x[6] in listalett:
+            if x[0] in letterList and x[1] in letterList and x[2] in numList and x[3] in numList and x[4] in numList and x[5] in letterList and x[6] in letterList:
                 self.plates = plates
             else:
                 raise ValueError("plates not available")
@@ -36,6 +36,6 @@ class Veicolo:
             if self.model == other.model:
                 return self.enginesize < other.enginesize
             else:
-                return listalett.index(self.model.upper()[0]) < listalett.index(other.model.upper()[0])
+                return letterList.index(self.model.upper()[0]) < letterList.index(other.model.upper()[0])
         else:
-            return listalett.index(self.brand.upper()[0]) < listalett.index(other.brand.upper()[0])
+            return letterList.index(self.brand.upper()[0]) < letterList.index(other.brand.upper()[0])
