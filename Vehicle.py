@@ -2,9 +2,9 @@
 
 import random
 
-colourList = ["Blue", "Yellow", "Black"]
-brandList = ["Audi", "Nissan", "Panda", "Toyota"]
-fuelList = ["Diesel", "Electric"]
+colorList = ["Blue", "Yellow", "Black", "White"]
+brandList = ["Audi", "Nissan", "Panda", "Toyota", "BMW", "KTM"]
+fuelList = ["Diesel", "Electric", "Fuel"]
 letterList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 numList = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
@@ -15,7 +15,7 @@ class Vehicle:
         plates: str,
         brand: str = "Toyota",
         model: str = "Yaris",
-        colour: str = "Yellow",
+        color: str = "Yellow",
         enginesize:int = 100,
         fuelType: str = "Diesel"):
         
@@ -24,32 +24,63 @@ class Vehicle:
         if brand not in brandList:
             raise ValueError("IMPOSSIBLE")
         else:
-            self.brand = brand
-        if colour not in colourList:
+            self.__brand = brand
+        if color not in colorList:
               raise ValueError("IMPOSSIBLE")
         else:  
-            self.colour = colour
+            self.__color = color
         if enginesize < 0 or enginesize % 100 != 0:
             raise ValueError("value not supported")
         else:
-            self.enginesize = enginesize
+            self.__enginesize = enginesize
         if fuelType not in fuelList:
             raise ValueError("IMPOSSIBLE")
         else:
-            self.fuelType = fuelType
+            self.__fuelType = fuelType
         if plates[0] in letterList and plates[1] in letterList and plates[2] in numList and plates[3] in numList and plates[4] in numList and plates[5] in letterList and plates[6] in letterList:
-            self.plates = plates
+            self.__plates = plates
         else:
             raise ValueError("plates not available")
+    
+    @property
+    def plates(self):
+        return self.__plates
+    
+    @property
+    def brand(self):
+        return self.__brand
+    
+    @property
+    def model(self):
+        return self.__model
+    
+    @property
+    def color(self):
+        return self.__color
+    
+    @property
+    def engineSize(self):
+        return self.__enginesize
+    
+    @property
+    def fuelType(self):
+        return self.__fuelType
+    
+    @color.setter
+    def color(self, value):
+        if value in colorList:
+            self.__color = value
+            return
+        raise ValueError("Color not in color list")
            
     def __lt__(self, other):
-        if self.brand == other.brand:
-            if self.model == other.model:
-                return self.enginesize < other.enginesize
+        if self.__brand.upper() == other.__brand.upper():
+            if self.__model.upper() == other.__model.upper():
+                return self.__enginesize.upper() < other.__enginesize.upper()
             else:
-                return letterList.index(self.model.upper()[0]) < letterList.index(other.model.upper()[0])
+                return self.__model.upper() < other.__model.upper()
         else:
-            return letterList.index(self.brand.upper()[0]) < letterList.index(other.brand.upper()[0])
+            return self.__brand.upper()[0] < other.__brand.upper()
 
     def __str__(self):
         return __class__.__name__ + str(self.__dict__)

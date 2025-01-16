@@ -14,6 +14,15 @@ class Motorbike(vehicle.Vehicle):
         passengersOnBoard: int = 2):
         
         super().__init__(plates, brand, model, colour, enginesize, fuelType)
+        
         self.__passengersMax = passengersMax
-        self.__passengersOnBoard = passengersOnBoard
+        if passengersOnBoard <= self.__passengersMax:
+            self.__passengersOnBoard = passengersOnBoard
+        else:
+            raise ValueError("The number of passengers can not be more than the passengers max quantity")
+        
+    def __str__(self):
+        return __class__.__name__ + str(self.__dict__)
+    def __repr__(self):
+        return __class__.__name__ + str(self.__dict__)        
         
