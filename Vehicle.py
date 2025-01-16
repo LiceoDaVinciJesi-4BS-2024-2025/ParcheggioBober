@@ -1,11 +1,12 @@
 #Vehicle
 
+import random
+
 colourList = ["Blue", "Yellow", "Black"]
 brandList = ["Audi", "Nissan", "Panda", "Toyota"]
 fuelList = ["Diesel", "Electric"]
-letterList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ]
+letterList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 numList = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-import random
 
 class Vehicle:
     #Init
@@ -17,7 +18,8 @@ class Vehicle:
         colour: str = "Yellow",
         enginesize:int = 100,
         fuelType: str = "Diesel"):
-
+        
+        self.model = model
         
         if brand not in brandList:
             raise ValueError("IMPOSSIBLE")
@@ -57,4 +59,8 @@ class Vehicle:
 
 v = Vehicle("AB123CD")
 print(v)
+v1 = Vehicle("AB124CD", "Audi")
+vList = [v, v1]
+vList.sort()
+print(vList)
 

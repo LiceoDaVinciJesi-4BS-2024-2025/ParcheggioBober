@@ -1,6 +1,6 @@
 #Car
 
-from Vehicle import Vehicle
+from vehicle import Vehicle
 
 class Car(Vehicle):
     def __init__(
@@ -19,12 +19,15 @@ class Car(Vehicle):
         super().__init__(plates, brand, model, colour, enginesize, fuelType)
         
         self.__passengersMax = passengersMax
-        self.__passengersOnBoard = passengersOnBoard
+         
+        if passengersOnBoard > self.__passengersMax:
+            raise ValueError("The number of passengers can not be more than the passengers max quantity")
+        else:
+            self.__passengersOnBoard = passengersOnBoard
 
     def __str__(self):
         return __class__.__name__ + str(self.__dict__)
     def __repr__(self):
         return __class__.__name__ + str(self.__dict__)
-
 
 c = Car("AB123CD")
