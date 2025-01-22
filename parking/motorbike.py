@@ -25,4 +25,3 @@ class Motorbike(vehicle.Vehicle):
         return __class__.__name__ + str(self.__dict__)
     def __repr__(self):
         return __class__.__name__ + str(self.__dict__)        
-        

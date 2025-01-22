@@ -11,11 +11,14 @@ class ParkingSpot:
         self,
         vehicleType,
         vehiclePlates: str,
-        free: bool,
         datetimeOfLeaving: datetime.datetime):
+        
         self.__vehicleType = vehicleType
         self.__vehiclePlates = vehiclePlates
-        self.__free = free
+        if self.__vehiclePlates == "":
+            self.__free = True
+        else:
+            self.__free = False
         self.__datetimeOfLeaving = datetimeOfLeaving
     
     def __str__(self):
