@@ -31,3 +31,4 @@ class Car(Vehicle):
         return __class__.__name__ + str(self.__dict__)
 
 c = Car("AB123CD")
+print(c)

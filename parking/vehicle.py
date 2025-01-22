@@ -19,7 +19,7 @@ class Vehicle:
         enginesize:int = 100,
         fuelType: str = "Diesel"):
         
-        self.model = model
+        self.__model = model
         
         if brand not in brandList:
             raise ValueError("IMPOSSIBLE")
