@@ -7,18 +7,10 @@ import datetime
 vehicleTypes = ["Car", "Motorbike"]
 
 class ParkingSpot:
-    def __init__(
-        self,
-        vehicleType,
-        vehiclePlates: str,
-        datetimeOfLeaving: datetime.datetime):
-        
+    def __init__(self,vehicleType, vehiclePlates: str, free: bool, datetimeOfLeaving: datetime.datetime):
         self.__vehicleType = vehicleType
         self.__vehiclePlates = vehiclePlates
-        if self.__vehiclePlates == "":
-            self.__free = True
-        else:
-            self.__free = False
+        self.__free = free
         self.__datetimeOfLeaving = datetimeOfLeaving
     
     def __str__(self):
@@ -26,3 +18,8 @@ class ParkingSpot:
     def __repr__(self):
         return __class__.__name__ + str(self.__dict__)
     
+    def reserveSpot(self, vType):
+        if self.__free:
+            pass
+        else:
+            pass
