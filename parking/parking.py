@@ -3,12 +3,13 @@
 from parking_spot import *
 
 class Parking:
-    def __init__(self, spotsMaxCars: int, spotsMaxMotorBikes: int):
-        self.__spotsMaxCars = spotsMaxCars
-        self.__spotsFreeCars = self.__spotsMaxCars
-        self.__spotsMaxMotorBikes = spotsMaxMotoBikes
-        self.__spotsFreeMotorBikes = self.__spotsMaxMotorBikes
+    def __init__(self):
+        self.__spotsMaxCars = 1000
+        self.__spotsMaxMotorBikes = 500
         self.__parkingSpotsCars = []
+        self.__parkingSpotsMotorBikes = []
+    
+    
         
     @property
     def spotsMaxCars(self):
