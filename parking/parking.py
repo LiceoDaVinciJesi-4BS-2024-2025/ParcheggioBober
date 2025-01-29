@@ -88,6 +88,7 @@ class Parking:
 if __name__ == "__main__":
     parcheggioSenzaBarboni = Parking()
     print(parcheggioSenzaBarboni)
+    parcheggioSenzaBarboni.freeUpSpots()
     v1 = Car("AG666ES")
     v2 = Motorbike("GG324GJ")
     v3 = Motorbike("BO111SI")
@@ -95,7 +96,6 @@ if __name__ == "__main__":
     parcheggioSenzaBarboni.reserveSpot(v2, 2)
     parcheggioSenzaBarboni.reserveSpot(v3, 4)
     print(parcheggioSenzaBarboni)
-    parcheggioSenzaBarboni.freeUpSpots()
 
     file = open("park.data", "w")
     file.write("Cars parking: \n")
