@@ -1,6 +1,9 @@
 #Parking
 
 from parking_spot import *
+from car import *
+from motorbike import *
+import datetime
 
 class Parking:
     def __init__(self):
@@ -8,8 +11,10 @@ class Parking:
         self.__spotsMaxMotorBikes = 500
         self.__parkingSpotsCars = []
         self.__parkingSpotsMotorBikes = []
-    
-    
+        for x in range(self.__spotsMaxMotorBikes):
+            self.__parkingSpotsMotorBikes.append()
+
+
         
     @property
     def spotsMaxCars(self):
