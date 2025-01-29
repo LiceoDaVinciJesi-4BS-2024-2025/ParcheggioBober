@@ -12,7 +12,7 @@ class Car(Vehicle):
         enginesize:int = 100,
         fuelType: str = "Diesel",
         passengersMax: int = 4,
-        passengersOnBoard: int = 10,
+        passengersOnBoard: int = 3,
         weightMax: int = 20,
         wieghtTransported: int = 10):
 

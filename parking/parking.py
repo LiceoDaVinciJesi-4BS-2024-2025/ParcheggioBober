@@ -12,9 +12,9 @@ class Parking:
         self.__parkingSpotsCars = []
         self.__parkingSpotsMotorBikes = []
         for x in range(self.__spotsMaxMotorBikes):
-            self.__parkingSpotsMotorBikes.append()
-
-
+            self.__parkingSpotsMotorBikes.append(ParkingSpot())
+        for y in range(self.__spotsMaxCars):
+            self.__parkingSpotsCars.append(ParkingSpot())
         
     @property
     def spotsMaxCars(self):

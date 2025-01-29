@@ -8,23 +8,58 @@ vehicleTypes = [Car, Motorbike]
 
 class ParkingSpot:
     def __init__(self):
-        if type(vehicleType) in vehicleTypes:
-            self.__vehicleType = vehicleType
-        else:
-            raise ValueError("Invalid value type")
+        self.__vehicleType = None
         self.__vehiclePlates = ""
         self.__free = True
-        self.__datetimeOfLeaving = datetime.datetime.now()
+        self.__datetimeOfLeaving = datetime.datetime(1, 1, 1, 1, 1)
     
     def __str__(self):
         return __class__.__name__ + str(self.__dict__)
     def __repr__(self):
         return __class__.__name__ + str(self.__dict__)
+
+    @property
+    def vehicleType(self):
+        return self.__vehicleType
+
+    @property
+    def vehiclePlates(self):
+        return self.__vehiclePlates
+
+    @property
+    def free(self):
+        return self.__free
+
+    @property
+    def datetimeOfLeaving(self):
+        return self.__datetimeOfLeaving
+
+    
     
     def reserveSpot(self, vehicleType, hoursOfOccupation: int, minutesOfOccupation: int = 0):
+        if type(vehicleType) not in vehicleTypes:
+            raise ValueError("Invalid vehicle type")
+
         if self.__free:
             self.__vehiclePlates = vehicleType.plates
-            self.__datetimeOfLeaving += datetime.timedelta(0, 0, 0, 0, minutesOfOccupation, hoursOfOccupation) #0 Days, 0 Seconds, 0 Microseconds, 0 Milliseconds, tot Minutes, tot Hours
+            self.__datetimeOfLeaving = datetime.datetime.now() + datetime.timedelta(minutes = minutesOfOccupation, hours = hoursOfOccupation)
             self.__free = False
-            return True
-        return False
+            return
+        return
+
+    def freeSpot(self):
+        self.__vehiclePlates = ""
+        self.__vehicleType = None
+        self.__free = True
+        self.__datetimeOfleaving = datetime.datetime(1, 1, 1, 1, 1)
+        return
+
+
+print("--<<|>>----<<|>>----<<|>>----<<|>>----<<|>>----<<|>>----<<|>>----<<|>>----<<|>>----<<|>>----<<|>>----<<|>>----<<|>>----<<|>>----<<|>>----<<|>>----<<|>>----<<|>>----<<|>>--")
+spot = ParkingSpot()
+print(spot)
+print(spot.datetimeOfLeaving)
+car = Car("AB123CD")
+spot.reserveSpot(car, 3, 30)
+print(spot.datetimeOfLeaving)
+  
