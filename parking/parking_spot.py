@@ -33,18 +33,14 @@ class ParkingSpot:
     @property
     def datetimeOfLeaving(self):
         return self.__datetimeOfLeaving
-
     
-    
-    def reserveSpot(self, vehicleType, hoursOfOccupation: int, minutesOfOccupation: int = 0):
-        if type(vehicleType) not in vehicleTypes:
+    def reserveSpot(self, vehicle, hoursOfOccupation: int, minutesOfOccupation: int = 0):
+        if type(vehicle) not in vehicleTypes:
             raise ValueError("Invalid vehicle type")
 
-        if self.__free:
-            self.__vehiclePlates = vehicleType.plates
-            self.__datetimeOfLeaving = datetime.datetime.now() + datetime.timedelta(minutes = minutesOfOccupation, hours = hoursOfOccupation)
-            self.__free = False
-            return
+        self.__vehiclePlates = vehicle.plates
+        self.__datetimeOfLeaving = datetime.datetime.now() + datetime.timedelta(minutes = minutesOfOccupation, hours = hoursOfOccupation)
+        self.__free = False
         return
 
     def freeSpot(self):
