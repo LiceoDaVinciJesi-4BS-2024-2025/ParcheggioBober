@@ -56,13 +56,13 @@ class Parking:
         for x in self.__parkingSpotsMotorBikes:
             if not x.free:
                 timeOfOccupation = x.datetimeOfLeaving - datetime.datetime.now()
-                money = self.__pricesPerHour * (timeOfOccupation.total_seconds() / 3600)
+                money = self.__pricesPerHour["motorbikes"] * (timeOfOccupation.total_seconds() / 3600)
                 totalMoney += money
 
         for y in self.__parkingSpotsCars:
             if not y.free:
                 timeOfOccupation = y.datetimeOfLeaving - datetime.datetime.now()
-                money = self.__pricesPerHour * (timeOfOccupation.total_seconds() / 3600)
+                money = self.__pricesPerHour["cars"] * (timeOfOccupation.total_seconds() / 3600)
                 totalMoney += money
 
         return totalMoney
@@ -98,6 +98,7 @@ if __name__ == "__main__":
     print(parcheggioSenzaBarboni)
 
     file = open("park.data", "w")
+    file.write(f"You gain {parcheggioSenzaBarboni.payDay()} euros \n")
     file.write("Cars parking: \n")
     for x in range(parcheggioSenzaBarboni.spotsMaxCars):
         file.write(str(parcheggioSenzaBarboni.parkingSpotsCars[x]) + "\n")
