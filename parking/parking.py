@@ -15,6 +15,7 @@ class Parking:
         "cars": 1.5,
         "motorbikes": 1.2
         }
+        self.__earnings = 0
         for x in range(self.__spotsMaxMotorBikes):
             self.__parkingSpotsMotorBikes.append(ParkingSpot())
         for y in range(self.__spotsMaxCars):
@@ -33,7 +34,9 @@ class Parking:
     def parkingSpotsCars(self):
         return self.__parkingSpotsCars
 
-    
+    @property
+    def earnings(self):
+        return self.__earnings
     
     def reserveSpot(self, vehicle, hoursOfOccupation):
         if type(vehicle) not in vehicleTypes:
@@ -65,7 +68,9 @@ class Parking:
                 money = self.__pricesPerHour["cars"] * (timeOfOccupation.total_seconds() / 3600)
                 totalMoney += money
 
-        return totalMoney
+        self.__earnings += totalMoney
+        
+        return self.__earnings
 
     def freeUpSpots(self):
         for x in self.__parkingSpotsMotorBikes:

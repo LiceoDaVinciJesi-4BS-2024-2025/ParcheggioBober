@@ -39,6 +39,17 @@ class Car(Vehicle):
         else:
             self.__passengersMax = passengersMax
 
+    @property
+    def passengersOnBoard(self):
+        return self.__passengersOnBoard
+
+    @passengersOnBoard.setter
+    def passengersOnBoard(self, value):
+         if passengersOnBoard <= self.__passengersMax:
+            self.__passengersOnBoard = passengersOnBoard
+            return
+         raise ValueError("The number of passengers can not be more than the passengers max quantity")
+
     def __str__(self):
         return __class__.__name__ + str(self.__dict__)
     def __repr__(self):

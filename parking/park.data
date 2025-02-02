@@ -1,6 +1,6 @@
-You gain 11.7 euros 
+You gain 11.699985401 euros 
 Cars parking: 
-ParkingSpot{'_ParkingSpot__vehicleType': None, '_ParkingSpot__vehiclePlates': 'AG666ES', '_ParkingSpot__free': False, '_ParkingSpot__datetimeOfLeaving': datetime.datetime(2025, 2, 2, 18, 18, 2, 569605)}
+ParkingSpot{'_ParkingSpot__vehicleType': None, '_ParkingSpot__vehiclePlates': 'AG666ES', '_ParkingSpot__free': False, '_ParkingSpot__datetimeOfLeaving': datetime.datetime(2025, 2, 2, 20, 26, 30, 998377)}
 ParkingSpot{'_ParkingSpot__vehicleType': None, '_ParkingSpot__vehiclePlates': '', '_ParkingSpot__free': True, '_ParkingSpot__datetimeOfLeaving': datetime.datetime(1, 1, 1, 1, 1)}
 ParkingSpot{'_ParkingSpot__vehicleType': None, '_ParkingSpot__vehiclePlates': '', '_ParkingSpot__free': True, '_ParkingSpot__datetimeOfLeaving': datetime.datetime(1, 1, 1, 1, 1)}
 ParkingSpot{'_ParkingSpot__vehicleType': None, '_ParkingSpot__vehiclePlates': '', '_ParkingSpot__free': True, '_ParkingSpot__datetimeOfLeaving': datetime.datetime(1, 1, 1, 1, 1)}
@@ -1001,8 +1001,8 @@ ParkingSpot{'_ParkingSpot__vehicleType': None, '_ParkingSpot__vehiclePlates': ''
 ParkingSpot{'_ParkingSpot__vehicleType': None, '_ParkingSpot__vehiclePlates': '', '_ParkingSpot__free': True, '_ParkingSpot__datetimeOfLeaving': datetime.datetime(1, 1, 1, 1, 1)}
 ParkingSpot{'_ParkingSpot__vehicleType': None, '_ParkingSpot__vehiclePlates': '', '_ParkingSpot__free': True, '_ParkingSpot__datetimeOfLeaving': datetime.datetime(1, 1, 1, 1, 1)}
 Motorbike parking: 
-ParkingSpot{'_ParkingSpot__vehicleType': None, '_ParkingSpot__vehiclePlates': 'GG324GJ', '_ParkingSpot__free': False, '_ParkingSpot__datetimeOfLeaving': datetime.datetime(2025, 2, 2, 17, 18, 2, 569605)}
-ParkingSpot{'_ParkingSpot__vehicleType': None, '_ParkingSpot__vehiclePlates': 'BO111SI', '_ParkingSpot__free': False, '_ParkingSpot__datetimeOfLeaving': datetime.datetime(2025, 2, 2, 19, 18, 2, 569605)}
+ParkingSpot{'_ParkingSpot__vehicleType': None, '_ParkingSpot__vehiclePlates': 'GG324GJ', '_ParkingSpot__free': False, '_ParkingSpot__datetimeOfLeaving': datetime.datetime(2025, 2, 2, 19, 26, 30, 998377)}
+ParkingSpot{'_ParkingSpot__vehicleType': None, '_ParkingSpot__vehiclePlates': 'BO111SI', '_ParkingSpot__free': False, '_ParkingSpot__datetimeOfLeaving': datetime.datetime(2025, 2, 2, 21, 26, 30, 998377)}
 ParkingSpot{'_ParkingSpot__vehicleType': None, '_ParkingSpot__vehiclePlates': '', '_ParkingSpot__free': True, '_ParkingSpot__datetimeOfLeaving': datetime.datetime(1, 1, 1, 1, 1)}
 ParkingSpot{'_ParkingSpot__vehicleType': None, '_ParkingSpot__vehiclePlates': '', '_ParkingSpot__free': True, '_ParkingSpot__datetimeOfLeaving': datetime.datetime(1, 1, 1, 1, 1)}
 ParkingSpot{'_ParkingSpot__vehicleType': None, '_ParkingSpot__vehiclePlates': '', '_ParkingSpot__free': True, '_ParkingSpot__datetimeOfLeaving': datetime.datetime(1, 1, 1, 1, 1)}
