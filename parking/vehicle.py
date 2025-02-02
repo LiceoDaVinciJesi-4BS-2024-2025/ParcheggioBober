@@ -22,21 +22,25 @@ class Vehicle:
         self.__model = model
         
         if brand not in brandList:
-            raise ValueError("IMPOSSIBLE")
+            raise ValueError("Brand not available")
         else:
             self.__brand = brand
+
         if color not in colorList:
               raise ValueError("IMPOSSIBLE")
         else:  
             self.__color = color
+
         if enginesize < 0 or enginesize % 100 != 0:
             raise ValueError("value not supported")
         else:
             self.__enginesize = enginesize
+
         if fuelType not in fuelList:
             raise ValueError("IMPOSSIBLE")
         else:
             self.__fuelType = fuelType
+
         if plates[0] in letterList and plates[1] in letterList and plates[2] in numList and plates[3] in numList and plates[4] in numList and plates[5] in letterList and plates[6] in letterList:
             self.__plates = plates
         else:
@@ -49,30 +53,55 @@ class Vehicle:
     @property
     def brand(self):
         return self.__brand
+
+    @brand.setter
+    def brand(self, value):
+        if value not in brandList:
+            raise ValueError("Brand not available")
+        self.__brand = value
+        return
     
     @property
     def model(self):
         return self.__model
+
+    @model.setter
+    def model(self, value):
+        self.__model = value
+        return
     
     @property
     def color(self):
         return self.__color
+
+    @color.setter
+    def color(self, value):
+        if value not in colorList:
+            raise ValueError("Color not available")
+        self.__color = value
+        return
     
     @property
     def engineSize(self):
         return self.__enginesize
+
+    @engineSize.setter
+    def engineSize(self, value):
+        if value < 0 or value % 100 != 0:
+            raise ValueError("engineSize must be a positive multiple of 100")
+        self.__engineSize = value
+        return
     
     @property
     def fuelType(self):
         return self.__fuelType
+
+    @fuelType.setter
+    def fuelType(self, value):
+        if value not in fuelList:
+            raise ValueError("fuelType not available")
+        return
     
-    @color.setter
-    def color(self, value):
-        if value in colorList:
-            self.__color = value
-            return
-        raise ValueError("Color not in color list")
-           
     def __lt__(self, other):
         if self.__brand.upper() == other.__brand.upper():
             if self.__model.upper() == other.__model.upper():
@@ -87,10 +116,12 @@ class Vehicle:
     def __repr__(self):
         return __class__.__name__ + str(self.__dict__)
 
+if __name__ == "__main__":
 
-v = Vehicle("AB123CD")
-print(v)
-v1 = Vehicle("AB124CD", "Audi")
-vList = [v, v1]
-vList.sort()
-print(vList)
+    v = Vehicle("AB123CD")
+    print(v)
+    v1 = Vehicle("AB124CD", "Audi")
+    vList = [v, v1]
+    vList.sort()
+    print(vList)
+

@@ -17,18 +17,34 @@ class Car(Vehicle):
         wieghtTransported: int = 10):
 
         super().__init__(plates, brand, model, colour, enginesize, fuelType)
-        
-        self.__passengersMax = passengersMax
+
+        if passengersMax < 1:
+            raise ValueError("passengersMax must be positive")
+        else:
+            self.__passengersMax = passengersMax
          
         if passengersOnBoard > self.__passengersMax:
             raise ValueError("The number of passengers can not be more than the passengers max quantity")
         else:
             self.__passengersOnBoard = passengersOnBoard
 
+    @property
+    def passengersMax(self):
+        return self.__passengersMax
+
+    @passengersMax.setter
+    def passengersMax(self, value):
+        if passengersMax < 1:
+            raise ValueError("passengersMax must be positive")
+        else:
+            self.__passengersMax = passengersMax
+
     def __str__(self):
         return __class__.__name__ + str(self.__dict__)
     def __repr__(self):
         return __class__.__name__ + str(self.__dict__)
 
-c = Car("AB123CD")
-print(c)
+if __name__ == "__main__":
+
+    c = Car("AB123CD")
+    print(c)
