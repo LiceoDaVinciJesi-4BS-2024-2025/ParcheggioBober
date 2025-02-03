@@ -102,6 +102,8 @@ if __name__ == "__main__":
     parcheggioSenzaBarboni.reserveSpot(v3, 4)
     print(parcheggioSenzaBarboni)
 
+    # PROF: Scusa Wiktor... che senso ha fare la scrittura qui? Il tuo parcheggio dovrebbe prevedere una funzione per salvare i dati
+    # PROF: e una per caricarli. Non trovi?
     file = open("park.data", "w")
     file.write(f"You gain {parcheggioSenzaBarboni.payDay()} euros \n")
     file.write("Cars parking: \n")
